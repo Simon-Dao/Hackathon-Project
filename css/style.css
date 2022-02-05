@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Shizuru&family=Supermercado+One&display=swap');
+:root{
+    --clr-gray: #f0f7f8;
+    --clr-gray-200: #cfd8dc;
+    --radius: 0.2rem;
+}
+body{
+    font-family: "Montserrat";
+    background-color: var(--clr-gray);
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.nav-item{
+    list-style: none;
+    display: inline;
+    margin-right:2rem;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color:black;
+    transition:all 200ms ease-in;
+}
+
+.nav-item a:hover{
+    color: turquoise;
+}
+
+.nav-item:first-child{
+    margin-left: auto;
+}
+
+.btn-primary{
+    font-family: "Montserrat";
+    font-size:1rem;
+    background:cyan;
+    border:none;
+    outline:none;
+    border-radius:var(--radius);
+    padding:0.5rem 1rem;
+    cursor:pointer;
+    transition:all 200ms ease-in;
+
+}
+.btn-primary:hover{
+    background-color:#008b8b;
+}
+
+.round-image{
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-top: 1.25rem;
+    margin-right: 1rem;
+    float: left;
+}
+
+.wrap{
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+.logo{
+    float: left;
+}
+
+.title{
+    font-family: 'Supermercado One', cursive;
+    font-size: 1.25rem;
+}
+
+.add-button {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    bottom: 150px;
+    right: 100px;
+}
+
+.center{
+    margin-right: 50% !important;
+    margin: auto;
+}
+
+.points{
+    list-style: none !important;
+}
+
+.sub-title{
+    font-family: 'Supermercado One', cursive;
+    font-size: 1.25rem;
+}

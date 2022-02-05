@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Open+Sans:wght@300&family=Shizuru&family=Supermercado+One&display=swap');
+
+.sidebar {
+  margin: 10px;
+  padding: 20px;
+  width: 25%;
+  background-color: #ECF0F1;
+  height: 80%;
+  overflow: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.center{
+    margin-right: 50% !important;
+    margin: auto;
+}
+
+.points{
+    list-style: none !important;
+}
+
+.sub-title{
+    font-family: 'Open Sans', cursive;
+    font-size: 2rem;
+}
