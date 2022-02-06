@@ -141,8 +141,11 @@ function editItem(invName, itemName, quantity) {
         expiration: dayNumber+expiration
     })
 
-    localStorage.setItem(itemName+"sales", (newVal))
-    localStorage.setItem(itemName+"money", (-newVal) * price)
+    let sales = localStorage.getItem(itemName+"sales") == null ? 0 : localStorage.getItem(itemName+"sales")
+    let money = localStorage.getItem(itemName+"money") == null ? 0 : localStorage.getItem(itemName+"money")
+
+    localStorage.setItem(itemName+"sales", parseInt(sales) + (newVal))
+    localStorage.setItem(itemName+"money", parseInt(money) + ((-newVal) * price))
 
     console.log(localStorage.getItem("sales"))
 

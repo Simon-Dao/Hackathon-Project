@@ -70,4 +70,6 @@ function rerender() {
     getItems("Safeway").forEach(element => {
         addItemCard(element.name, element.price, element.quantity)
     });
+
+    displayInfo()
 }
