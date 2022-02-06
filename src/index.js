@@ -11,7 +11,7 @@ function init() {
     }
 
     var item = {
-        name:"banana",
+        name:"Banana",
         quantity: 15,
         price: 5,
         batches:[
