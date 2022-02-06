@@ -1,5 +1,5 @@
 function InventoryManager() {
-
+/*
     let addButton = document.querySelector('.add-button')
     let cancelButton = document.querySelector('.inventory-cancel-button')
 
@@ -21,6 +21,7 @@ function InventoryManager() {
         addInventoryCard(nameInput.value, sizeInput.value)
         myModal.hide()
     })
+    */
 }
 
 InventoryManager()
