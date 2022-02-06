@@ -1,5 +1,5 @@
+function InventoryManager() {
 
-window.addEventListener('DOMContentLoaded', () => {
     let addButton = document.querySelector('.add-button')
     let cancelButton = document.querySelector('.inventory-cancel-button')
     let submitButton = document.querySelector('.inventory-submit-button')
@@ -17,6 +17,9 @@ window.addEventListener('DOMContentLoaded', () => {
     })
 
     submitButton.addEventListener('click', () => {
+        addInventoryCard(nameInput.value, sizeInput.value)
         myModal.hide()
     })
-})
+}
+
+function getInventory(invName){ return localStorage.getItem(invName) }

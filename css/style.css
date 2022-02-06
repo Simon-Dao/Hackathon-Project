@@ -79,9 +79,10 @@ body{
     width: 100px;
     height: 100px;
 
-    position: absolute;
+    position: fixed;
     bottom: 150px;
     right: 100px;
+    z-index: 99999999;
 }
 
 .center{
@@ -90,7 +91,7 @@ body{
 }
 
 .points{
-    list-style: none !important;
+    margin-left: 50px;
 }
 
 .sub-title{
@@ -101,3 +102,23 @@ body{
 .question{
     margin: auto;
 }
+
+::-webkit-scrollbar-track
+{
+	border: 5px solid white;
+	background-color: #b2bec3;
+}
+
+::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: #dfe6e9;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #74b9ff;
+	border-radius: 10px;
+}
+
+
