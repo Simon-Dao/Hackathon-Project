@@ -1,5 +1,4 @@
 
-
 window.addEventListener('DOMContentLoaded', () => {
     let addButton = document.querySelector('.add-button')
     let cancelButton = document.querySelector('.inventory-cancel-button')
