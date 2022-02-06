@@ -1,0 +1,141 @@
+
+:root{
+  --clr-gray: #f0f7f8;
+  --clr-gray-200: #cfd8dc;
+  --radius: 6%;
+}
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
+    }
+}
+
+/*--------------------------------------------------------------
+Header styles minus menu
+--------------------------------------------------------------*/
+
+.masthead {
+    background: #e74c3c;
+  	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.site-title {
+    margin: 0 0 1em;
+    padding: 1em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (min-width: 44.44em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+    
+@media screen and (min-width: 50em) {
+    .site-title {
+        font-size: 2.5em;
+    }
+}
+
+.site-title a {
+    color: hsl(5, 45%, 95%);
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    text-decoration: underline;
+}
+
+/* Card Based Layout - Base styles */
+body {
+  background: #BFD8B3 !important;
+  line-height: 1.4;
+}
+
+.site-title {
+	color: white;
+}
+
+.card {
+	background: #E0E9DC;
+	margin-bottom: 2em;	
+  margin-top: 1rem;
+  border: white 1px solid !important;
+  border-radius: var(--radius) !important;
+}
+
+.card a {
+	color: black;
+	text-decoration: none;
+}
+
+.card a:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+  border: 0.1px hsl(0, 0%, 70%);
+  border-radius: var(--radius)
+}
+
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: normal;
+}
+
+.card-content p {
+	font-size: 95%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Flexbox styles */
+@media screen and (min-width: 40em) {  
+  .cards {
+    margin-top: -1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: 1em;
+    display: flex;
+    flex: 0 1 calc(50% - 0.5em);
+    /* width: calc(50% - 1em); */
+  }
+} /* mq 40em*/
+
+@media screen and (min-width: 60em) {
+  .cards {
+    margin-top: inherit;
+  }
+  
+  .card {
+    margin-bottom: 2em;
+    display: flex;
+    flex: 0 1 calc(33% - 0.5em);
+    /* width: calc(33% - 1em); */
+  }
+} /* mq 60em*/
+
+.image-special{
+  border: 1px solid black;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+.text{
+  color: black;
+  font-family: sans-serif;
+}
+
+
