@@ -1,4 +1,3 @@
-//InventoryManager()
 
 function init() {
     /*
@@ -8,7 +7,7 @@ function init() {
 */
     var batch = {
         number: 15, 
-        expiration: "2/5/2022" 
+        expiration: 7
     }
 
     var item = {
@@ -31,11 +30,16 @@ function init() {
             size: 15,
             items: items
         }
-        
     ]
 
     localStorage.setItem("Inventories", JSON.stringify(inventory))
+    addItem("Safeway", "milk", 15, 1)
+    addItem("Safeway", "egg", 15, 1)
+    addItem("Safeway", "butt", 15, 1)
+    addItem("Safeway", "poop", 15, 1)
+
+    localStorage.setItem("sales", 0)
 }
 
 init()
-
+rerender()

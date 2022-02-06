@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body class="">
-    <div class="modal" id="myModal" tabindex="-1">
+    <div class="modal myModal2" id="" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -26,18 +26,26 @@
                 <div class="modal-body">
                   <form>
                     <div class="form-group">
-                      <label class="col-form-label">Name:</label>
-                      <input type="text" class="form-control" id="inventory-name" autocomplete="off">
+                        <label class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="item-name" autocomplete="off" >
                     </div>
                     <div class="form-group">
-                        <label class="col-form-label">Item Size:</label>
-                        <input type="text" class="form-control" id="inventory-size" autocomplete="off">
-                      </div>
+                        <label class="col-form-label">Price:</label>
+                        <input type="text" class="form-control" id="price-input" autocomplete="off" >
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Initial Size:</label>
+                        <input type="text" class="form-control" id="initial-size-input" autocomplete="off" >
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Shelf Life:</label>
+                        <input type="text" class="form-control" id="shelf-life-input" autocomplete="off" >
+                    </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="inventory-cancel-button btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="inventory-submit-button btn btn-primary">Submit</button>
+                  <button type="button" class="item-cancel-button btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="item-submit-button btn btn-primary">Submit</button>
                 </div>
               </div>
           </div>
@@ -47,7 +55,7 @@
     <header class="flex-row navbar navbar-dark " style="background-color: #83A38E;">
         <nav class>
             <ul>
-                <li class="navbar navbar-expand-lg navbar-light title" style=" padding-top: 10px; font-size: 60px; color: white; height: 50px;">
+                <li class="navbar navbar-expand-lg navbar-light title" style=" padding-top: 40px; font-size: 60px; color: white; height: 50px;">
                     Zaiko
                 </li>
                 <li class="navbar navbar-expand-lg navbar-light title">
@@ -60,51 +68,71 @@
     <div class="main-container d-flex flex-row" style="background-color:white; height: 100vh; overflow-y: hidden;">
         
         <div class="sidebar" >
-            <h1 class="sub-title">Item</h1>
+            <h1 class="sub-title">Items</h1>
             <hr>
-            <div class="center" style="float:left; list-style:none;">
-                <h2 class="center">Stats</h2>
-                <div style="float:left; list-style:none;margin-left:-22%;">
-                    <p class="points">
-                        Sales this week: 
+            <div class="" style="">
+                <h2 class="" id="selectedName">Stats</h2>
+                <div style="">
+                    <p class="points sales-so-far">
+                        Sales so far:
                     </p>
-                    <p class="points">
+                    <p class="points sales-today">
                         Sales today:
                     </p>
-                    <p class="points">
-                        Total items:
-                    </p>
-                    <p class="points">
-                        Net income:
-                    </p>
-                    <p class="points">
-                        Net Loss:
+                    <p class="points net-earnings">
+                        Net earnings:
                     </p>
                 </div>
             </div>
+            <!--<button id="day-button"></button>-->
+
+            <form style="margin-top: 15rem;">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control new-value" placeholder="new value" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="quantity-change-button">Button</button>
+                  </div>
+              </form>
+
         </div>
         
+        <button class="btn btn-primary add-button d-flex" 
+        style="border: none; background-color: #83A38E; 
+        border-radius: 100px;justify-content: center; 
+        align-items: center; font-size: 40px;">
+        +
+        </button>
         <main class="main">
-            <button class="btn btn-primary add-button d-flex" 
-            style="border: none; background-color: #83A38E; 
-            border-radius: 100px;justify-content: center; 
-            align-items: center; font-size: 40px;">
-                +
-            </button>
+            <!--
+                <div class="card card-custom">
+                    <div class="button-container" style="position: absolute; display: none;">
+                        <button class="btn btn-primary"></button>
+                        <a class="btn btn-primary" href="./item.html"></a>
+                    </div>
+    
+                    <div class="card-body d-flex" style="justify-content: center; align-items: center; position: relative;">
+    
+                        <h5 class="card-title">Name</h5>
+                    </div>
+                    <div href="" class="btn btn-primary"></div>
+                </div>
+
+            -->
+            
         </main>
     </div>
 
     <footer style="background-color: black;">
-        <div>
-            
-        </div>
+        
     </footer>
 </div>
+    <script src="../src/DayHandler.js"></script>
     <script src="../src/InventoryManager.js"></script>
+    <script src="../src/SideBarView.js"></script>
     <script src="../src/InventoryViewManager.js"></script>
     <script src="../src/ItemManager.js"></script>
     <script src="../src/ItemViewManager.js"></script>
     <script src="../src/index.js"></script>
+
 </body>
 
 </html>

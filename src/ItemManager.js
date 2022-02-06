@@ -1,25 +1,51 @@
-var button = document.querySelector('.inventory-submit-button')
+var invName = "Safeway"
+var selected = ''
 
-button.addEventListener('click', (name, quantity, expiration, price, batch) => {
-    let newItem = {
-        name: name,
-        batch: batch,
-        quantity: quantity,
-        expiration: expiration,
-        price: price
-    }
-    localStorage.setItem(name, JSON.stringify(newItem))
-})
+function ItemManager() {
+    let submitButton = document.querySelector('.item-submit-button')
+    let cancelButton = document.querySelector('.item-cancel-button')
+    let myModal = new bootstrap.Modal(document.querySelector(".myModal2"));
+    let addButton = document.querySelector('.add-button')
 
-button.addEventListener('click', (name, quantity, expiration, batch) => {
-    let newBatch = {
-        name: name,
-        batch: batch,
-        quantity: quantity,
-        expiration: expiration,
-    }
-    localStorage.setItem(name, JSON.stringify(newBatch))
-})
+    let changeButton = document.querySelector('#quantity-change-button')
+
+    addButton.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        myModal.show();
+    })
+
+    cancelButton.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        myModal.hide()
+    })
+
+    submitButton.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        myModal.hide()
+        let name = document.querySelector('#item-name').value
+        let price = document.querySelector('#price-input').value
+        let quantity = document.querySelector('#initial-size-input').value
+        let expiration = document.querySelector('#shelf-life-input').value
+        addItem(invName, name, parseInt(price), parseInt(quantity), parseInt(expiration))
+        addItemCard(name, price, quantity)
+    })
+
+    changeButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        let change = parseInt(document.querySelector('.new-value').value)
+
+
+
+        editItem("Safeway", selected, change)
+
+        rerender()
+    })
+}
+
+ItemManager()
 
 function getItems(invName, itemName) {
     return getInventory(invName, itemName).items
@@ -32,7 +58,6 @@ function getItem(invName, itemName) {
 
     for(var index in items) {
 
-
         if(items[index].name == itemName) {
             result = items[index]
         }
@@ -44,17 +69,6 @@ function getItem(invName, itemName) {
 function getBatches(invName, itemName) { 
     return getItem(invName, itemName).batches
 }
-/* Don't really need this rlly
-function getBatch(invName, itemName){ 
-
-    console.log(getBatches(invName, itemName))
-
-    return getBatches(invName, itemName).find((element) => {
-        element.name == itemName
-    })
-}*/
-
-//Array.find(  (index, index) => {//condition }    )
 
 function getMinExp(invName, itemName) {
 
@@ -69,3 +83,96 @@ function getMaxExp(invName, itemName){
     return batches[batches.length-1].expiration
 }
 
+function getAllData() {
+    return JSON.parse(localStorage.getItem('Inventories'))
+}
+
+function updateBatches(data) {
+
+    data.forEach((inventory, invI)=> {
+
+        let numItems = 0
+
+        inventory.items.forEach((item, itI) => {
+            let numOfCurrentItems = 0
+            item.batches.forEach((batch, baI) => {
+                numOfCurrentItems += batch.number
+            })
+            
+            item.quantity = numOfCurrentItems
+            numItems += numOfCurrentItems
+        })
+
+        inventory.size = numItems
+    })
+
+    return data
+}
+
+function removeItem(invName, name) {
+
+    data = getAllData()
+
+    data.find(obj => obj.name == invName).items = 
+    data.find(obj => obj.name == invName).items.filter(obj => {
+        return obj.name != name
+    })
+    console.log(name)
+
+    updateBatches(data)
+
+    //then updates the total size as well as the item size
+    localStorage.setItem("Inventories", JSON.stringify(data))
+    rerender()
+}
+
+function editItem(invName, itemName, quantity) {
+    let data = getAllData()
+    let oldVal = data.find(obj => obj.name == invName).items.find(obj => obj.name == itemName).quantity
+    let expiration = data.find(obj => obj.name == invName).items.find(obj => obj.name == itemName).expiration
+    let price = data.find(obj => obj.name == invName).items.find(obj => obj.name == itemName).price
+
+    let newVal = oldVal + quantity
+    
+    newVal = newVal < 0 ? -oldVal : quantity
+
+    data.find(obj => obj.name == invName).items.find(obj => obj.name == itemName).batches.push({
+        number: newVal < 0 ? -oldVal : quantity,
+        expiration: dayNumber+expiration
+    })
+
+    localStorage.setItem(itemName+"sales", (newVal))
+    localStorage.setItem(itemName+"money", (-newVal) * price)
+
+    console.log(localStorage.getItem("sales"))
+
+    updateBatches(data)
+
+    //then updates the total size as well as the item size
+    localStorage.setItem("Inventories", JSON.stringify(data))
+    rerender()
+}
+
+function addItem(invName, name, price, quantity, expiration) {
+    let data = getAllData()
+
+    let newItem = {
+        name:name,
+        quantity: quantity,
+        price: price,
+        batches: [
+            {
+                number: quantity,
+                expiration: dayNumber+expiration
+            }
+        ]
+    }
+
+    data.find(obj => obj.name == invName).items.push(newItem)
+
+    updateBatches(data)
+
+    //then updates the total size as well as the item size
+    localStorage.setItem("Inventories", JSON.stringify(data))
+
+}

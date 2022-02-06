@@ -1,16 +1,12 @@
 .card-custom {
     margin: 20px;
     padding: 20px;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     transition: .1s ease-in;
 }
 
 .card-custom:hover {
-    opacity: .5;
+    background-color: rgba(51, 170, 51, .1) ;
     transition: .1s ease-in-out;
-}
-
-.card-title {
-    font-size:20px;
 }

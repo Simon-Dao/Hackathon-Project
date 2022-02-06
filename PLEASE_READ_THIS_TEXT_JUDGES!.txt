@@ -1,0 +1,9 @@
+Hello, my name is Simon Dao and I have spent the last 16 hours programming this(no joke). 
+
+I want to apologize for writing the worst code you will 
+ever have the unfortune of laying your eyes upon. Frankly, I had good intentions for the my code at first. I even tried to write it as clean as possible.
+But time has forced my hand and I had no choice but to write this god forsaken spaghetti abomination of a program. I am very sorry you had to read through this code.
+
+It is currently 4:05 AM in the morning and I think I am going to go sleep now. 
+
+Good night
