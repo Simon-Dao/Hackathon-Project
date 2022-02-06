@@ -17,7 +17,7 @@ function InventoryManager() {
     submitButton.addEventListener('click', () => {
         let nameInput = document.querySelector('#inventory-name')
         let sizeInput = document.querySelector('#inventory-size')
-sadads
+sadads ""
         addInventoryCard(nameInput.value, sizeInput.value)
         myModal.hide()
     })
