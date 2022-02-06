@@ -33,10 +33,10 @@ function init() {
     ]
 
     localStorage.setItem("Inventories", JSON.stringify(inventory))
-    addItem("Safeway", "milk", 15, 1)
-    addItem("Safeway", "egg", 15, 1)
-    addItem("Safeway", "butt", 15, 1)
-    addItem("Safeway", "poop", 15, 1)
+    addItem("Safeway", "Milk", 15, 1)
+    addItem("Safeway", "Egg", 15, 1)
+    addItem("Safeway", "Bread", 15, 1)
+    addItem("Safeway", "Rice", 15, 1)
 
     localStorage.setItem("sales", 0)
 }
