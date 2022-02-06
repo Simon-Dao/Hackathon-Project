@@ -30,9 +30,7 @@ function getItem(invName, itemName) {
 
 
 function getBatches(invName, itemName) { 
-    return getItem(invName, itemName).find((element, index) => {
-        element === itemName
-    }).batches
+    return getItem(invName, itemName).find((element, index) => {element === itemName}).batches
 }
 
 
@@ -51,31 +49,3 @@ function getMinExp(invName, itemName) {
 }
 
 function getMaxExp(invName, itemName){}
-
-var batch = {
-    number: 15, 
-    expiration: "2/5/2022" 
-}
-
-var item = {
-    name:"banana",
-    quantity: 15,
-    price: 5,
-    batches:[
-        batch
-    ]
-}
-
-var items = [
-    item
-]
-
-var inventory = [
-    //inventory
-    {
-        name:"subway on rainier",
-        size: 15,
-        items: items
-    }
-    
-]

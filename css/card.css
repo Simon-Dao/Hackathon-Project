@@ -3,4 +3,10 @@
     padding: 20px;
     width: 200px;
     height: 200px;
+    transition: .1s ease-in;
+}
+
+.card-custom:hover {
+    opacity: .5;
+    transition: .1s ease-in-out;
 }
