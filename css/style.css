@@ -97,3 +97,7 @@ body{
     font-family: 'Supermercado One', cursive;
     font-size: 1.25rem;
 }
+
+.question{
+    margin: auto;
+}

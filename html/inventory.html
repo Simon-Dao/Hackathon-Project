@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="..//css//style.css">
     <link rel="stylesheet" href="../css//sidebar.css">
+    <link rel="stylesheet" href="../css//modal.css">
     <link rel="stylesheet" href="../css//main.css">
     <link rel="stylesheet" href="../css//card.css">
     <title>HOME</title>
@@ -13,6 +14,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body class="">
+    <div class="modal" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Inventory</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label class="col-form-label">Name:</label>
+                      <input type="text" class="form-control" id="inventory-name">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Inventory Size:</label>
+                        <input type="text" class="form-control" id="inventory-size">
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="inventory-cancel-button btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="inventory-submit-button btn btn-primary">Send message</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
     <header class="flex-row navbar navbar-dark " style="background-color: #58D68D;">
         <nav class>
             <ul>
@@ -64,25 +95,21 @@
             <div class="card card-custom">
                 <div class="card-body"></div>
                 <h5 class="card-title">asdasdas</h5>
-                <a href="" class="btn btn-primary"></a>
+                <div href="" class="btn btn-primary"></div>
             </div>
-
-            <div class="add-modal hidden">
-                <button class="inventory-submit-button">Submit</button>
-            </div>
-
         </main>
     </div>
 
     <footer style="background-color: black;">
         <div>
-            FOOTER
+            
         </div>
     </footer>
 </div>
 
     <script src="../src/DataHandler.js"></script>
     <script src="../src/index.js"></script>
+    <script src="../src/InventoryManager.js"></script>
 </body>
 
 </html>
