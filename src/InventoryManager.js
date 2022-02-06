@@ -22,4 +22,8 @@ function InventoryManager() {
     })
 }
 
-function getInventory(invName){ return localStorage.getItem(invName) }
+function getInventory(invName){ 
+    //array -> string    
+    //string -> array
+    return JSON.parse(localStorage.getItem('Inventories')).find(inv => inv.name == invName)        
+}
