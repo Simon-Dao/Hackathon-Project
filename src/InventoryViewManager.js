@@ -3,7 +3,7 @@ function addInventoryCard(name, size) {
     card.classList.add("card")
     card.classList.add("card-custom")
     //card.innerHTML = '<div class=\"card-body\"></div><h5 class=\"card-title\">'+name+'</h5><div href=\"\" class=\"btn btn-primary\"></div>'
-
+    // hello ignore this change i am learning github
     let cardBody = document.createElement('div')
     cardBody.className = "card-body"
     cardBody.style = " display:flex!important; flex-direction: row; justify-content: center; align-items: center; position: relative;"
